@@ -641,7 +641,7 @@ function renderEntryList(list, el, emptyText) {
   const groups = {};
   list.forEach(e => { (groups[dayKey(e.t)] = groups[dayKey(e.t)] || []).push(e); });
   const keys = Object.keys(groups).sort().reverse();
-  if (!keys.length) { el.innerHTML = `<div class="items"><div class="empty-state">${artSVG('coin')}${emptyText}</div></div>`; return; }
+  if (!keys.length) { el.innerHTML = `<div class="items"><div class="empty-state">${artSVG('purse')}${emptyText}</div></div>`; return; }
   el.innerHTML = keys.map(k => {
     const items = groups[k];
     const d = new Date(items[0].t);
@@ -808,7 +808,7 @@ function renderRange() {
       <div class="best">${bestHtml}</div>
       <details><summary>看這週 ${weeks[k].length} 筆明細 ›</summary>${lines}</details>
     </div>`;
-  }).join('') : `<div class="items"><div class="empty-state">${artSVG('coin')}這段期間沒有要報帳的紀錄</div></div>`;
+  }).join('') : `<div class="items"><div class="empty-state">${artSVG('purse')}這段期間沒有要報帳的紀錄</div></div>`;
 
   renderEntryList(list, $('rgList'), '沒有符合的紀錄');
   if (toFetch.length) ensureHist(toFetch);
