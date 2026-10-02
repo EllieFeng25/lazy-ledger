@@ -239,6 +239,15 @@ ART.purse = { parts: [
   ...BOW(50, 68, 1.35, '#B4302A'),
 ]};
 
+// 日期小圖：手繪的桌曆
+ART.calendar = { parts: [
+  { d: 'M14 24 H86 C88 24 90 26 90 28 V86 C90 89 88 91 85 91 H15 C12 91 10 89 10 86 V28 C10 26 12 24 14 24 Z', f: PAL.ivory, ink: true, iw: 4.5 },
+  { d: 'M10 28 C10 26 12 24 14 24 H86 C88 24 90 26 90 28 V42 H10 Z', f: PAL.vermilion, ink: true, iw: 4.5 },
+  { d: 'M32 14 V32 M68 14 V32', ink: true, iw: 6 },
+  { d: 'M26 56 h10 M45 56 h10 M64 56 h10 M26 72 h10 M45 72 h10', ink: true, iw: 4.5 },
+  { d: `${C(69, 72, 6)}`, f: PAL.olive, ink: true, iw: 3.5 },
+]};
+
 let __artSeq = 0;
 function artSVG(id, cls = '') {
   const a = ART[id] || ART.other;

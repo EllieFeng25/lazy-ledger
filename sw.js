@@ -1,6 +1,6 @@
 // 離線快取：App 本身的檔案存在手機裡，沒網路也能打開記帳。
 // 每次改了 index.html 之後，把 VERSION 數字加 1，手機才會抓新版。
-const VERSION = 'v8';
+const VERSION = 'v9';
 const CACHE = 'lazy-ledger-' + VERSION;
 const FILES = [
   './',

@@ -67,11 +67,11 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 /* 頂部 */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .brand { line-height: 1.1; }
-.brand .zh { font-family: var(--serif-zh); font-weight: 700; font-size: 19px; letter-spacing: .06em; }
+.brand .zh { font-family: var(--serif-zh); font-weight: 700; font-size: 21px; letter-spacing: .06em; }
 .brand .en { font-size: 10px; color: var(--on-sage-soft); margin-top: 3px; white-space: nowrap; letter-spacing: .1em; }
 .summary { display: flex; align-items: center; gap: 10px; background: var(--paper); color: var(--ink);
-  border-radius: 999px; padding: 7px 14px; font-size: 15px; box-shadow: 0 2px 8px rgba(40,30,20,.12); }
-.summary .lbl { font-family: var(--serif-zh); color: var(--ink-soft); font-size: 11px; margin-right: 4px; }
+  border-radius: 999px; padding: 8px 15px; font-size: 17px; box-shadow: 0 2px 8px rgba(40,30,20,.12); }
+.summary .lbl { font-family: var(--serif-zh); color: var(--ink-soft); font-size: 13px; margin-right: 4px; }
 .summary b { font-weight: 700; font-variant-numeric: lining-nums tabular-nums; }
 .summary > span { white-space: nowrap; }
 .summary .sep { width: 1px; height: 14px; background: var(--line); }
@@ -79,13 +79,21 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 
 /* 金額 */
 .amount-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 120px; }
-.cur-chip { font-size: 13px; color: var(--on-sage); border: 1px solid rgba(46,34,25,.28); padding: 4px 12px; border-radius: 999px; font-family: var(--serif-zh); }
+.cur-chip { font-size: 15px; color: var(--on-sage); border: 1px solid rgba(46,34,25,.28); padding: 4px 12px; border-radius: 999px; font-family: var(--serif-zh); }
 .cur-chip .auto { color: var(--on-sage-soft); }
+.chips { display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.date-chip { position: relative; font-size: 15px; color: var(--on-sage); border: 1px solid rgba(46,34,25,.28); padding: 4px 12px; border-radius: 999px;
+  font-family: var(--serif-zh); display: inline-flex; align-items: center; gap: 4px; overflow: hidden; }
+.date-chip .chip-art { width: 22px; height: 22px; margin: -3px 0 -3px -4px; }
+.date-chip input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; border: 0; padding: 0; margin: 0; font-size: 16px; -webkit-appearance: none; appearance: none; }
+.date-chip.past { background: var(--sage-deep); color: #FBF5EA; border-color: var(--sage-deep); }
+.date-clear { display: none; font-size: 15px; color: var(--accent); font-family: var(--serif-zh); font-weight: 700; padding: 4px 2px; }
+.date-clear.show { display: inline-block; }
 .amount { font-size: 68px; font-weight: 600; line-height: 1; margin-top: 8px; font-variant-numeric: lining-nums tabular-nums; letter-spacing: .01em; }
 .amount.empty { color: rgba(46,34,25,.22); }
 .amount .sym { font-size: 34px; margin-right: 4px; color: var(--on-sage-soft); }
 .note { margin-top: 10px; width: 78%; text-align: center; background: transparent; border: 0; outline: 0; font-family: var(--serif-zh);
-  font-size: 15px; padding: 6px 4px; color: var(--on-sage);
+  font-size: 18px; padding: 6px 4px; color: var(--on-sage);
   background-image: linear-gradient(to right, rgba(46,34,25,.4) 50%, transparent 50%);
   background-size: 8px 1.2px; background-repeat: repeat-x; background-position: bottom; }
 .note::placeholder { color: rgba(46,34,25,.42); }
@@ -94,7 +102,7 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 
 /* 毛筆標籤（POV:...） */
 .brush { align-self: center; position: relative; padding: 9px 26px 10px; font-family: var(--serif-zh); font-weight: 700;
-  font-size: 15px; letter-spacing: .06em; color: #FBF5EA; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  font-size: 17px; letter-spacing: .06em; color: #FBF5EA; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 .brush::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--sage-deep);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M7 9 C30 3 90 5 140 3 C165 2 186 3 194 6 C199 11 198 16 196 20 C199 25 198 31 193 35 C150 39 120 36 80 38 C50 39 24 37 9 36 C3 31 5 26 3 21 C2 16 3 12 7 9 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M7 9 C30 3 90 5 140 3 C165 2 186 3 194 6 C199 11 198 16 196 20 C199 25 198 31 193 35 C150 39 120 36 80 38 C50 39 24 37 9 36 C3 31 5 26 3 21 C2 16 3 12 7 9 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
@@ -104,16 +112,16 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 /* 類別 */
 .cats { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; }
 .cat { width: 25%; display: flex; flex-direction: column; align-items: center; padding: 2px 0 4px; transition: transform .1s, opacity .2s; }
-.cat .art { width: 58px; height: 58px; }
+.cat .art { width: 60px; height: 60px; }
 .cat .en { font-size: 9.5px; color: var(--on-sage-soft); margin-top: 1px; }
-.cat .zh { font-family: var(--serif-zh); font-size: 14px; font-weight: 700; line-height: 1.2; }
+.cat .zh { font-family: var(--serif-zh); font-size: 17px; font-weight: 700; line-height: 1.25; margin-top: 2px; }
 .cat:active { transform: scale(.92); }
 .cats:not(.ready) .cat { opacity: .55; }
 .cats.ready .cat .zh { color: var(--ink); }
 
 /* 數字鍵盤 */
 .pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.key { height: 50px; border-radius: 14px; background: var(--key); font-size: 28px; font-weight: 600;
+.key { height: 52px; border-radius: 14px; background: var(--key); font-size: 31px; font-weight: 600;
   font-variant-numeric: lining-nums; transition: background .08s; }
 .key:active { background: var(--key-press); }
 .key.fn { font-size: 22px; color: var(--on-sage-soft); }
@@ -122,11 +130,11 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 .toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 20px); transform: translate(-50%, 20px);
   background: var(--paper); color: var(--ink); padding: 8px 6px 8px 10px; border-radius: 16px; display: flex; gap: 4px;
   align-items: center; opacity: 0; pointer-events: none; transition: all .2s; font-size: 15px; z-index: 50;
-  width: max-content; max-width: calc(100vw - 28px); box-shadow: 0 6px 24px rgba(40,30,20,.22); font-family: var(--serif-zh); }
+  width: max-content; max-width: calc(100vw - 28px); box-shadow: 0 6px 24px rgba(40,30,20,.22); font-family: var(--serif-zh); font-size: 16px; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
 .toast .art { width: 34px; height: 34px; flex: none; }
 .toast .msg { margin: 0 6px 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.toast button { color: var(--accent); font-weight: 700; padding: 6px 9px; font-size: 14px; white-space: nowrap; }
+.toast button { color: var(--accent); font-weight: 700; padding: 6px 9px; font-size: 16px; white-space: nowrap; }
 
 /* 紀錄面板（玫瑰棕） */
 .sheet { position: fixed; inset: 0; background: var(--rose); color: var(--cream); z-index: 20; transform: translateY(100%);
@@ -135,55 +143,55 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 .sheet-head { max-width: 480px; width: 100%; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between;
   padding: calc(env(safe-area-inset-top) + 12px) 18px 6px; }
 .sheet-head .en { font-size: 11px; opacity: .75; }
-.sheet-head h2 { margin: 2px 0 0; font-family: var(--serif-zh); font-size: 22px; letter-spacing: .06em; }
-.close { font-family: var(--serif-zh); font-size: 15px; font-weight: 700; padding: 6px 2px; color: #E9C98F; }
+.sheet-head h2 { margin: 2px 0 0; font-family: var(--serif-zh); font-size: 24px; letter-spacing: .06em; }
+.close { font-family: var(--serif-zh); font-size: 17px; font-weight: 700; padding: 6px 2px; color: #E9C98F; }
 .sheet-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .sheet-inner { max-width: 480px; margin: 0 auto; padding: 4px 18px calc(env(safe-area-inset-bottom) + 40px); }
 .month-nav { display: flex; align-items: center; justify-content: space-between; margin: 6px 0 14px; }
 .month-nav button { font-size: 26px; padding: 2px 14px; opacity: .8; }
 .month-nav button:disabled { opacity: .2; }
 .month-title { text-align: center; }
-.month-title .zh { font-family: var(--serif-zh); font-weight: 700; font-size: 16px; }
+.month-title .zh { font-family: var(--serif-zh); font-weight: 700; font-size: 19px; }
 .card { background: var(--paper); color: var(--ink); border-radius: 20px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 14px rgba(40,25,20,.16); }
-.card .k { font-family: var(--serif-zh); color: var(--ink-soft); font-size: 13px; }
-.big-total { font-size: 46px; font-weight: 600; line-height: 1.05; margin: 4px 0 2px; font-variant-numeric: lining-nums tabular-nums; }
-.sub { font-family: var(--serif-zh); color: var(--ink-soft); font-size: 12.5px; }
+.card .k { font-family: var(--serif-zh); color: var(--ink-soft); font-size: 15px; }
+.big-total { font-size: 50px; font-weight: 600; line-height: 1.05; margin: 4px 0 2px; font-variant-numeric: lining-nums tabular-nums; }
+.sub { font-family: var(--serif-zh); color: var(--ink-soft); font-size: 14px; }
 .bars { margin-top: 14px; display: flex; flex-direction: column; gap: 9px; }
-.bar-row { display: grid; grid-template-columns: 30px 44px 1fr auto; gap: 8px; align-items: center; font-size: 14px; font-family: var(--serif-zh); }
-.bar-row .art { width: 30px; height: 30px; }
+.bar-row { display: grid; grid-template-columns: 32px 50px 1fr auto; gap: 8px; align-items: center; font-size: 16px; font-family: var(--serif-zh); }
+.bar-row .art { width: 32px; height: 32px; }
 .bar-track { height: 8px; border-radius: 6px; background: var(--cream-2); overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 6px; background: var(--cc); }
-.bar-amt { font-family: var(--serif); font-size: 16px; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; min-width: 64px; text-align: right; }
-.day { margin: 18px 4px 7px; display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
+.bar-amt { font-family: var(--serif); font-size: 18px; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; min-width: 64px; text-align: right; }
+.day { margin: 20px 4px 8px; display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; }
 .day .d { font-family: var(--serif-zh); font-weight: 700; letter-spacing: .04em; }
-.day .s { font-size: 16px; font-weight: 600; opacity: .9; font-variant-numeric: lining-nums; }
+.day .s { font-size: 18px; font-weight: 600; opacity: .9; font-variant-numeric: lining-nums; }
 .items { background: var(--paper); color: var(--ink); border-radius: 20px; overflow: hidden; box-shadow: 0 3px 14px rgba(40,25,20,.14); }
 .item { width: 100%; display: flex; align-items: center; gap: 10px; padding: 9px 14px 9px 8px; text-align: left; border-top: 1px dashed var(--line); }
 .item:first-child { border-top: 0; }
-.item .art { width: 42px; height: 42px; flex: none; }
+.item .art { width: 44px; height: 44px; flex: none; }
 .item .mid { flex: 1; min-width: 0; }
-.item .ttl { font-family: var(--serif-zh); font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.item .meta { font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
+.item .ttl { font-family: var(--serif-zh); font-size: 17px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item .meta { font-size: 13.5px; color: var(--ink-soft); margin-top: 2px; font-family: var(--serif-zh); }
 .item .r { text-align: right; font-variant-numeric: lining-nums tabular-nums; }
-.item .r .amt { font-size: 19px; font-weight: 600; }
-.item .r .conv { font-size: 12.5px; color: var(--ink-soft); }
-.empty-state { text-align: center; padding: 22px 0 20px; font-family: var(--serif-zh); font-size: 14px; color: var(--ink-soft); }
+.item .r .amt { font-size: 21px; font-weight: 600; }
+.item .r .conv { font-size: 14px; color: var(--ink-soft); }
+.empty-state { text-align: center; padding: 22px 0 20px; font-family: var(--serif-zh); font-size: 16px; color: var(--ink-soft); }
 .empty-state .art { width: 84px; height: 84px; display: block; margin: 0 auto 8px; }
 .section-title { margin: 30px 4px 8px; font-size: 11px; opacity: .8; }
 .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 0; border-top: 1px dashed var(--line);
-  font-size: 15px; font-family: var(--serif-zh); }
+  font-size: 16.5px; font-family: var(--serif-zh); }
 .row:first-child { border-top: 0; padding-top: 0; }
 .row:last-child { padding-bottom: 0; }
 .seg { display: inline-flex; background: var(--cream-2); border-radius: 12px; padding: 3px; flex: none; }
 .seg button { padding: 6px 12px; border-radius: 9px; font-size: 16px; color: var(--ink-soft); font-family: var(--serif); font-weight: 600; }
 .seg button.on { background: var(--paper); color: var(--ink); box-shadow: 0 1px 4px rgba(40,25,20,.15); }
-.link-btn { color: var(--accent); font-weight: 700; font-size: 15px; font-family: var(--serif-zh); white-space: nowrap; }
-.small { font-size: 12px; color: var(--ink-soft); font-family: var(--serif-zh); margin-top: 2px; }
-.foot { text-align: center; margin-top: 18px; font-size: 12px; opacity: .8; font-family: var(--serif-zh); }
+.link-btn { color: var(--accent); font-weight: 700; font-size: 16.5px; font-family: var(--serif-zh); white-space: nowrap; }
+.small { font-size: 13.5px; color: var(--ink-soft); font-family: var(--serif-zh); margin-top: 2px; }
+.foot { text-align: center; margin-top: 18px; font-size: 13.5px; opacity: .8; font-family: var(--serif-zh); }
 
 /* 帳本分頁 */
 .tabs { display: flex; background: rgba(255,250,240,.12); border-radius: 14px; padding: 4px; margin: 4px 0 10px; }
-.tabs button { flex: 1; padding: 9px 0; border-radius: 10px; font-family: var(--serif-zh); font-weight: 700; font-size: 14.5px; color: rgba(250,244,230,.75); }
+.tabs button { flex: 1; padding: 10px 0; border-radius: 10px; font-family: var(--serif-zh); font-weight: 700; font-size: 16.5px; color: rgba(250,244,230,.75); }
 .tabs button.on { background: var(--paper); color: var(--ink); box-shadow: 0 1px 6px rgba(20,10,5,.2); }
 /* 區間查詢 */
 .range-row { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
@@ -191,23 +199,23 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 .date-input { flex: 1; min-width: 0; font-size: 15px; font-family: var(--serif); font-weight: 600; background: var(--cream-2); border: 0; outline: 0;
   border-radius: 12px; padding: 10px 10px; color: var(--ink); -webkit-appearance: none; appearance: none; min-height: 42px; }
 .quick { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-.quick button { font-family: var(--serif-zh); font-size: 13px; padding: 6px 12px; border-radius: 999px; background: var(--cream-2); color: var(--ink-soft); }
+.quick button { font-family: var(--serif-zh); font-size: 15px; padding: 6px 12px; border-radius: 999px; background: var(--cream-2); color: var(--ink-soft); }
 .quick button.on { background: var(--sage-deep); color: #FBF5EA; }
 .k-row { display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px; margin-bottom: 4px; }
 .cat-pick.multi button:not(.on) { opacity: .4; filter: grayscale(.6); }
 .week { padding: 16px 16px 12px; }
 .week-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.week-head .d { font-family: var(--serif-zh); font-weight: 700; font-size: 15px; }
-.week-head .amt { font-size: 24px; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; }
-.best { margin-top: 8px; padding: 10px 12px; border-radius: 12px; background: var(--cream-2); font-family: var(--serif-zh); font-size: 13px; line-height: 1.55; }
+.week-head .d { font-family: var(--serif-zh); font-weight: 700; font-size: 16.5px; }
+.week-head .amt { font-size: 27px; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; }
+.best { margin-top: 8px; padding: 10px 12px; border-radius: 12px; background: var(--cream-2); font-family: var(--serif-zh); font-size: 15px; line-height: 1.6; }
 .best b { color: var(--accent); }
-.best .rate { font-family: var(--serif); font-size: 15px; font-weight: 600; font-variant-numeric: lining-nums; }
+.best .rate { font-family: var(--serif); font-size: 17px; font-weight: 600; font-variant-numeric: lining-nums; }
 .week details { margin-top: 8px; }
-.week summary { font-family: var(--serif-zh); font-size: 13px; color: var(--ink-soft); cursor: pointer; padding: 4px 0; list-style: none; }
+.week summary { font-family: var(--serif-zh); font-size: 14.5px; color: var(--ink-soft); cursor: pointer; padding: 4px 0; list-style: none; }
 .week summary::-webkit-details-marker { display: none; }
-.wline { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px dashed var(--line); font-size: 13.5px; font-family: var(--serif-zh); }
+.wline { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px dashed var(--line); font-size: 15px; font-family: var(--serif-zh); }
 .wline .l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wline .r { font-family: var(--serif); font-size: 15px; font-weight: 600; white-space: nowrap; font-variant-numeric: lining-nums; }
+.wline .r { font-family: var(--serif); font-size: 17px; font-weight: 600; white-space: nowrap; font-variant-numeric: lining-nums; }
 .wline .r small { color: var(--ink-soft); font-weight: 500; font-size: 12.5px; }
 
 /* 編輯面板 */
@@ -219,34 +227,34 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
 .modal.open .modal-box { transform: translateY(0); }
 .grab { width: 40px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 12px; }
 .modal-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
-.modal-head h3 { margin: 0; font-family: var(--serif-zh); font-size: 19px; letter-spacing: .05em; }
+.modal-head h3 { margin: 0; font-family: var(--serif-zh); font-size: 21px; letter-spacing: .05em; }
 .modal-head .en { font-size: 10.5px; color: var(--ink-soft); }
 .field { margin-top: 14px; }
-.field > label { display: block; font-family: var(--serif-zh); font-size: 12.5px; color: var(--ink-soft); margin-bottom: 6px; }
+.field > label { display: block; font-family: var(--serif-zh); font-size: 14.5px; color: var(--ink-soft); margin-bottom: 6px; }
 .amt-row { display: flex; align-items: center; gap: 10px; }
 .amt-input { flex: 1; min-width: 0; font-size: 38px; font-weight: 600; font-family: var(--serif); background: var(--cream-2); border: 0; outline: 0;
   border-radius: 14px; padding: 6px 14px; font-variant-numeric: lining-nums; color: var(--ink); }
-.text-input { width: 100%; font-size: 16px; font-family: var(--serif-zh); background: var(--cream-2); border: 0; outline: 0; border-radius: 12px; padding: 11px 14px; color: var(--ink); }
+.text-input { width: 100%; font-size: 17.5px; font-family: var(--serif-zh); background: var(--cream-2); border: 0; outline: 0; border-radius: 12px; padding: 11px 14px; color: var(--ink); }
 .cat-pick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
 .cat-pick button { display: flex; flex-direction: column; align-items: center; padding: 6px 0 4px; border-radius: 12px; font-family: var(--serif-zh);
-  font-size: 11.5px; font-weight: 700; color: var(--ink-soft); }
+  font-size: 14px; font-weight: 700; color: var(--ink-soft); }
 .cat-pick button .art { width: 38px; height: 38px; }
 .cat-pick button { transition: background .15s, box-shadow .15s, transform .15s, opacity .15s; }
 .cat-pick button.on { background: #E3E2CC; color: var(--ink); }
 .actions { display: flex; flex-direction: column; gap: 4px; margin-top: 20px; }
-.btn-save { background: var(--sage-deep); color: var(--cream); font-family: var(--serif-zh); font-weight: 700; font-size: 17px; letter-spacing: .1em;
+.btn-save { background: var(--sage-deep); color: var(--cream); font-family: var(--serif-zh); font-weight: 700; font-size: 18.5px; letter-spacing: .1em;
   padding: 15px; border-radius: 16px; }
-.btn-del { color: var(--danger); font-family: var(--serif-zh); font-size: 15px; padding: 12px; }
+.btn-del { color: var(--danger); font-family: var(--serif-zh); font-size: 16.5px; padding: 12px; }
 
 /* 加到主畫面提示 */
-.install { font-size: 13px; font-family: var(--serif-zh); background: var(--paper); color: var(--ink); border-radius: 14px; padding: 9px 12px;
+.install { font-size: 15px; font-family: var(--serif-zh); background: var(--paper); color: var(--ink); border-radius: 14px; padding: 9px 12px;
   display: none; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(40,30,20,.12); }
 .install.show { display: flex; }
 .install span { flex: 1; }
 .install button { color: var(--ink-soft); font-size: 18px; padding: 0 4px; }
 
 @media (max-height: 700px) {
-  .key { height: 44px; font-size: 24px; }
+  .key { height: 46px; font-size: 27px; }
   .amount { font-size: 54px; }
   .cat .art { width: 48px; height: 48px; }
   .cat .en { display: none; }
@@ -274,7 +282,11 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
   </div>
 
   <div class="amount-wrap">
-    <button class="cur-chip" id="curChip" aria-label="切換幣別"></button>
+    <div class="chips">
+      <label class="date-chip" id="dateChip"><span id="dateIcon"></span><span id="dateLabel"></span><input type="date" id="dateInput" aria-label="選擇日期"></label>
+      <button class="cur-chip" id="curChip" aria-label="切換幣別"></button>
+      <button class="date-clear" id="dateClear">回到今天</button>
+    </div>
     <div class="amount empty" id="amount"></div>
     <input class="note" id="note" type="text" maxlength="40" placeholder="買了什麼？（可以不寫）" enterkeyhint="done" autocomplete="off">
   </div>
@@ -370,7 +382,7 @@ input { font: inherit; color: inherit; -webkit-user-select: text; user-select: t
     </div>
     <div class="field"><label>買了什麼</label><input class="text-input" id="edNote" type="text" maxlength="40" placeholder="可以不寫" enterkeyhint="done"></div>
     <div class="field"><label>類別</label><div class="cat-pick" id="edCats"></div></div>
-    <div class="field"><label>時間</label><input class="text-input" id="edTime" type="datetime-local"></div>
+    <div class="field"><label>日期</label><input class="text-input" id="edTime" type="date"></div>
     <div class="actions">
       <button class="btn-save" id="edSave">儲存</button>
       <button class="btn-del" id="edDelete">刪除這筆</button>
@@ -559,19 +571,45 @@ function tapCategory(catId) {
     return;
   }
   const note = $('note').value.trim();
-  const e = addEntry(amt, activeCur(), catId, note);
+  const e = addEntry(amt, activeCur(), catId, note, entryTime());
   amountStr = ''; curOverride = null; $('note').value = ''; $('note').blur();
   renderAll();
-  flashHint('POV：記好了 ✓_');
+  flashHint(entryDay ? `POV：記到 ${md(parseDay(entryDay))} 了_` : 'POV：記好了 ✓_');
   showToast(e);
 }
+
+/* ========== 記帳日期（預設今天，可以選其他天） ========== */
+let entryDay = null;               // null = 今天；選了其他天就存 'YYYY-MM-DD'，記完會停在那天，方便連續補記
+function entryTime() {
+  if (!entryDay) return Date.now();
+  const now = new Date(), d = parseDay(entryDay);
+  d.setHours(now.getHours(), now.getMinutes(), now.getSeconds());
+  return d.getTime();
+}
+function renderDateChip() {
+  const todayK = dayKey(Date.now());
+  if (entryDay === todayK) entryDay = null;
+  const k = entryDay || todayK, d = parseDay(k);
+  $('dateLabel').textContent = (entryDay ? md(d) : `今天 ${d.getMonth() + 1}/${d.getDate()}`) + ' ▾';
+  $('dateInput').value = k;
+  $('dateChip').classList.toggle('past', !!entryDay);
+  $('dateClear').classList.toggle('show', !!entryDay);
+}
+$('dateIcon').innerHTML = artSVG('calendar', 'chip-art');
+$('dateInput').addEventListener('change', () => {
+  const v = $('dateInput').value;
+  entryDay = v && v !== dayKey(Date.now()) ? v : null;
+  renderDateChip();
+  if (entryDay) flashHint(`POV：接下來記到 ${md(parseDay(entryDay))}_`, 2200);
+});
+$('dateClear').onclick = () => { entryDay = null; renderDateChip(); };
 
 /* ========== Toast ========== */
 let toastTimer, toastId;
 function showToast(e, text) {
   if (e) {
     $('toastArt').innerHTML = artSVG(e.k);
-    $('toastMsg').textContent = `${e.n || CAT[e.k].name}　${fmt(e.a, e.c)}`;
+    $('toastMsg').textContent = `${dayKey(e.t) !== dayKey(Date.now()) ? `${new Date(e.t).getMonth() + 1}/${new Date(e.t).getDate()} ` : ''}${e.n || CAT[e.k].name}　${fmt(e.a, e.c)}`;
   } else { $('toastArt').innerHTML = ''; $('toastMsg').textContent = text; }
   $('toastEdit').style.display = $('toastUndo').style.display = e ? '' : 'none';
   toastId = e ? e.id : null;
@@ -653,7 +691,7 @@ function renderEntryList(list, el, emptyText) {
         const conv = e.c !== main ? `<div class="conv">≈ ${fmt(eurToMain(e.eur), main)}${e.est ? '（暫估）' : ''}</div>` : '';
         return `<button class="item" data-id="${e.id}">
           ${artSVG(c.id)}
-          <span class="mid"><div class="ttl">${esc(e.n || c.name)}</div><div class="meta caps">${c.en}${e.n ? ' · ' + c.name : ''} · ${hhmm(e.t)}</div></span>
+          <span class="mid"><div class="ttl">${esc(e.n || c.name)}</div>${e.n ? `<div class="meta">${c.name}</div>` : ''}</span>
           <span class="r"><div class="amt">${fmt(e.a, e.c)}</div>${conv}</span>
         </button>`;
       }).join('')}</div>`;
@@ -818,7 +856,7 @@ function exportRangeCsv() {
   const list = rangeEntries();
   const weeks = {};
   list.forEach(e => { const k = dayKey(mondayOf(new Date(e.t))); (weeks[k] = weeks[k] || []).push(e); });
-  const rows = [['週', '日期', '時間', '類別', '品項', '原始金額', '幣別', '報帳匯率日期', '匯率(1 原幣 = TWD)', '報帳金額(TWD)']];
+  const rows = [['週', '日期', '類別', '品項', '原始金額', '幣別', '報帳匯率日期', '匯率(1 原幣 = TWD)', '報帳金額(TWD)']];
   const summary = [['週', '報帳匯率日期', '1 EUR = TWD', '1 GBP = TWD', '報帳總額(TWD)']];
   Object.keys(weeks).sort().forEach(k => {
     const w = weekReport(weeks[k]);
@@ -827,7 +865,7 @@ function exportRangeCsv() {
     [...weeks[k]].sort((a, b) => a.t - b.t).forEach(e => {
       const v = toReimb(e, r);
       const unit = !r || e.c === REIMB ? '' : (e.c === 'EUR' ? r.TWD : r.TWD / r.GBP);
-      rows.push([label, dayKey(e.t), hhmm(e.t), (CAT[e.k] || CAT.other).name, e.n || '', e.a, e.c,
+      rows.push([label, dayKey(e.t), (CAT[e.k] || CAT.other).name, e.n || '', e.a, e.c,
         e.c === REIMB ? '' : (w.best ? w.best.day : '匯率未取得'), unit === '' ? '' : unit.toFixed(4), v == null ? '' : Math.round(v)]);
     });
     summary.push([label, w.best ? w.best.day : (w.foreign ? '匯率未取得' : '不需換匯'), r ? r.TWD.toFixed(4) : '', r ? (r.TWD / r.GBP).toFixed(4) : '', Math.round(w.total)]);
@@ -872,7 +910,7 @@ $('list').addEventListener('click', (ev) => { const b = ev.target.closest('.item
 
 /* ========== 編輯 ========== */
 let editId = null, edCur = 'EUR', edCat = 'other', delArmed = false;
-function toLocalInput(t) { const d = new Date(t); return `${dayKey(t)}T${pad2(d.getHours())}:${pad2(d.getMinutes())}`; }
+function toLocalInput(t) { return dayKey(t); }
 function renderEditPickers() {
   $('edCur').innerHTML = CUR_ORDER.map(c => `<button data-cur="${c}" class="${edCur === c ? 'on' : ''}">${CURS[c].sym}</button>`).join('');
   $('edCats').innerHTML = CATS.map(c => `<button data-cat="${c.id}" class="${edCat === c.id ? 'on' : ''}" style="--cc:${c.color}">${artSVG(c.id)}${c.name}</button>`).join('');
@@ -899,7 +937,10 @@ $('edSave').onclick = () => {
   if (edCur !== e.c) { e.r = currentRates()[edCur]; if (!hasRealRates() && edCur !== 'EUR') e.est = true; else delete e.est; }
   e.a = a; e.c = edCur; e.eur = a / e.r; e.k = edCat;
   const n = $('edNote').value.trim(); if (n) e.n = n; else delete e.n;
-  const t = new Date($('edTime').value).getTime(); if (t > 0) e.t = t;
+  if ($('edTime').value) {   // 只改日期，保留原本記帳的時刻（用來排序）
+    const nd = parseDay($('edTime').value), od = new Date(e.t);
+    nd.setHours(od.getHours(), od.getMinutes(), od.getSeconds()); e.t = nd.getTime();
+  }
   entries.sort((x, y) => y.t - x.t);
   saveEntries(); closeEdit(); renderAll();
   showToast(null, '已更新 ✓');
@@ -924,8 +965,8 @@ async function deliverFile(name, text, type) {
 }
 $('exportCsv').onclick = () => {
   const main = settings.mainCur;
-  const rows = [['日期', '時間', '類別', '品項', '金額', '幣別', `換算(${main})`]];
-  [...entries].reverse().forEach(e => rows.push([dayKey(e.t), hhmm(e.t), (CAT[e.k] || CAT.other).name, e.n || '', e.a, e.c, eurToMain(e.eur).toFixed(CURS[main].dec)]));
+  const rows = [['日期', '類別', '品項', '金額', '幣別', `換算(${main})`]];
+  [...entries].reverse().forEach(e => rows.push([dayKey(e.t), (CAT[e.k] || CAT.other).name, e.n || '', e.a, e.c, eurToMain(e.eur).toFixed(CURS[main].dec)]));
   const csv = '﻿' + rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
   deliverFile(`記帳苦手-${dayKey(Date.now())}.csv`, csv, 'text/csv');
 };
@@ -984,7 +1025,7 @@ function handleUrlParams() {
 
 /* ========== 事件綁定 ========== */
 $('cats').innerHTML = CATS.map(c =>
-  `<button class="cat" data-cat="${c.id}">${artSVG(c.id)}<span class="en caps">${c.en}</span><span class="zh">${c.name}</span></button>`).join('');
+  `<button class="cat" data-cat="${c.id}">${artSVG(c.id)}<span class="zh">${c.name}</span></button>`).join('');
 $('cats').addEventListener('click', (ev) => { const b = ev.target.closest('.cat'); if (b) tapCategory(b.dataset.cat); });
 $('pad').addEventListener('click', (ev) => { const b = ev.target.closest('.key'); if (b) pressKey(b.dataset.k); });
 $('curChip').onclick = () => {
@@ -1021,10 +1062,15 @@ if (isIOS && !standalone && !settings.installDismissed) $('install').classList.a
 $('installClose').onclick = () => { $('install').classList.remove('show'); settings.installDismissed = true; saveSettings(); };
 
 function renderAll() {
-  renderTop(); renderAmount(); renderHint();
+  renderTop(); renderAmount(); renderHint(); renderDateChip();
   if ($('sheet').classList.contains('open')) { currentTab === 'range' ? renderRange() : renderHistory(); renderSettings(); }
 }
-document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') { renderAll(); fetchRates(); } });
+let hiddenAt = 0;
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') { hiddenAt = Date.now(); return; }
+  if (entryDay && hiddenAt && Date.now() - hiddenAt > 5 * 60 * 1000) entryDay = null;   // 離開超過 5 分鐘再回來，日期回到今天
+  renderAll(); fetchRates();
+});
 
 handleUrlParams();
 renderAll();
